@@ -110,4 +110,12 @@ public class CountryController {
 		});
 		return errors;
 	}
+
+	@GetMapping(value = "/short/{shortUrl}")
+	public ResponseEntity<Void> getAndRedirect(@PathVariable String shortUrl) {
+
+		// redirection
+		String url = "https://dzone.com/articles/url-shortener-detailed-explanation";
+		return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(url)).build();
+	}
 }
