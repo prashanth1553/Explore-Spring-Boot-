@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.myspringboot.models.Country;
 
 @Repository
-public interface CountryRepository extends JpaRepository<Country, Long> {
+public interface CountryRepository extends JpaRepository<Country, Long>, CustomCountryRepository {
 
 	public List<Country> findByNameIgnoreCase(String name);
 }
